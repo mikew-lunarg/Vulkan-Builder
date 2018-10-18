@@ -1,0 +1,18 @@
+[submodule "KhronosGroup/Vulkan-Headers"]
+	path = KhronosGroup/Vulkan-Headers
+	url = git@github.com:KhronosGroup/Vulkan-Headers.git
+[submodule "KhronosGroup/Vulkan-Loader"]
+	path = KhronosGroup/Vulkan-Loader
+	url = git@github.com:KhronosGroup/Vulkan-Loader.git
+[submodule "KhronosGroup/Vulkan-Tools"]
+	path = KhronosGroup/Vulkan-Tools
+	url = git@github.com:KhronosGroup/Vulkan-Tools.git
+[submodule "KhronosGroup/Vulkan-ValidationLayers"]
+	path = KhronosGroup/Vulkan-ValidationLayers
+	url = git@github.com:KhronosGroup/Vulkan-ValidationLayers.git
+[submodule "KhronosGroup/glslang"]
+	path = KhronosGroup/glslang
+	url = git@github.com:KhronosGroup/glslang.git
+[submodule "LunarG/VulkanTools"]
+	path = LunarG/VulkanTools
+	url = git@github.com:LunarG/VulkanTools.git
