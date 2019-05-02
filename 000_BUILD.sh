@@ -1,9 +1,9 @@
 #! /bin/bash
 # http://mew.cx/ 2019-03-20
 
-set -o errexit
-set -o nounset
-set -o physical
+#set -o errexit
+#set -o nounset
+#set -o physical
 
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
@@ -22,10 +22,7 @@ describe_repo() {
 
 build_repo() {
     cd "$1"
-    echo
-    echo
-    echo "BUILD $(pwd -P) ========================================================"
-    echo
+    echo -e "\n\n\nBUILD $(pwd -P) ========================================================\n"
     describe_repo >> "$DESC_FILE"
     rm -rf BUILD/
     time ./000_BUILD.sh "$INSTALL_DIR"
@@ -43,6 +40,7 @@ build_repo "$HOME/gits/github.com/KhronosGroup/Vulkan-Loader"
 build_repo "$HOME/gits/github.com/KhronosGroup/Vulkan-Tools"
 build_repo "$HOME/gits/github.com/KhronosGroup/Vulkan-ValidationLayers"
 build_repo "$HOME/gits/github.com/LunarG/VulkanTools"
+#build_repo "$HOME/gits/github.com/LunarG/VulkanSamples"
 
 echo "FINISH ${BASH_SOURCE[0]}" >> "$DESC_FILE"
 date >> "$DESC_FILE"
