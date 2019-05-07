@@ -54,7 +54,8 @@ export DISPLAY
 
 VK_LAYER_PATH="../layers" \
     ./vk_layer_validation_tests \
-    --gtest_filter=VkLayerTest.ResolveImageTypeMismatch \
     |& tee ../222_TEST_LOG.txt
+
+#    --gtest_filter=VkLayerTest.ResolveImageTypeMismatch \
 
 # vim: set sw=4 ts=8 et ic ai:
