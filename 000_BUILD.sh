@@ -40,7 +40,7 @@ build_repo KhronosGroup Vulkan-Loader
 build_repo KhronosGroup Vulkan-Tools
 build_repo KhronosGroup Vulkan-ValidationLayers
 build_repo LunarG VulkanTools
-#build_repo LunarG VulkanSamples
+build_repo LunarG VulkanSamples
 
 (echo "FINISH ${BASH_SOURCE[0]}"; date) >> "$DESC_FILE"
 
