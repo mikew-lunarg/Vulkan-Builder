@@ -1,5 +1,6 @@
 #! /bin/bash
 # http://mew.cx/ 2019-03-20
+# Main script for full build of all Vulkan repos
 
 set -o nounset
 
@@ -22,11 +23,11 @@ describe_repo() {
 build_repo() {
     cd "/home/mikew/gits/github.com/${1}/${2}"
     build_script="BUILD_${1}_${2}.sh"
-    cp "${START_DIR}/${build_script}" "."
-    echo -e "\n\n\nBUILD $(pwd -P) ========================================================\n"
+    cp "$START_DIR/$build_script" "."
     describe_repo >> "$DESC_FILE"
+    echo -e "\n\n\nBUILD $(pwd -P) ========================================================\n"
     rm -rf BUILD/
-    time "./${build_script}"
+    time "./$build_script" "$INSTALL_DIR"
 }
 
 # Make it so ################################################################
