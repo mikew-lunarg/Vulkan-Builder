@@ -35,7 +35,7 @@ $CMAKE \
 
 # ( cd ../..; tar zcvf BUILD-vvl.tgz Vulkan-ValidationLayers/BUILD )
 
-make VERBOSE=1 -j install |& tee 111_BUILD_LOG.txt
+make VERBOSE=1 -j4 install |& tee 111_BUILD_LOG.txt
 
 
 # portability setup =========================================================
