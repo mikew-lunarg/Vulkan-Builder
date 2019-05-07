@@ -1,4 +1,5 @@
 #! /bin/bash -x
+# LunarG_VulkanTools
 
 set -o errexit
 set -o nounset

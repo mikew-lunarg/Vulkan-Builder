@@ -1,5 +1,8 @@
 #! /bin/bash -x
-# Vulkan-ValidationLayers
+# KhronosGroup_Vulkan-ValidationLayers
+
+#       git clone https://github.com/google/googletest.git external/googletest
+#       ( cd external/googletest; git checkout tags/release-1.8.1 )
 
 set -o errexit
 set -o nounset
@@ -34,19 +37,22 @@ $CMAKE \
 
 make VERBOSE=1 -j install |& tee 111_BUILD_LOG.txt
 
-# testing ===================================================================
+
+# portability setup =========================================================
 
 # portability build products:
 #    BUILD/layers/VkLayer_portability_validation.json
 #    BUILD/layers/libVkLayer_portability_validation.so
 
-# Effectively prepend named layers to vkCreateInstance's ppEnabledLayerNames list.
+# Prepend named layers to vkCreateInstance's ppEnabledLayerNames list.
 # Delimited list: Linux colon-delimited; Windows semicolon-delimited
-export VK_INSTANCE_LAYERS="VK_LAYER_LUNARG_portability_validation"
+#export VK_INSTANCE_LAYERS="VK_LAYER_LUNARG_portability_validation"
+
+# validation layer tests ====================================================
 
 # error, warn, info, debug, all
-export VK_LOADER_DEBUG="debug"
-export VK_LOADER_DEBUG="all"
+#export VK_LOADER_DEBUG="debug"
+#export VK_LOADER_DEBUG="all"
 
 cd tests
 echo "DISPLAY = ${DISPLAY:=:0}"

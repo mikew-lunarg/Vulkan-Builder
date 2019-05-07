@@ -1,4 +1,5 @@
 #! /bin/bash -x
+# LunarG_VulkanSamples
 
 set -o errexit
 set -o nounset
