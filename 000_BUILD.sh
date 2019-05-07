@@ -21,11 +21,12 @@ describe_repo() {
 
 build_repo() {
     cd "/home/mikew/gits/github.com/${1}/${2}"
-    cp "${START_DIR}/BUILD_${1}_${2}.sh" "."
+    build_script="BUILD_${1}_${2}.sh"
+    cp "${START_DIR}/${build_script}" "."
     echo -e "\n\n\nBUILD $(pwd -P) ========================================================\n"
     describe_repo >> "$DESC_FILE"
     rm -rf BUILD/
-    time ./000_BUILD.sh "$INSTALL_DIR"
+    time "./${build_script}"
 }
 
 # Make it so ################################################################
