@@ -22,11 +22,11 @@ describe_repo() {
 
 build_repo() {
     cd "/home/mikew/gits/github.com/${1}/${2}"
-    cp "$START_DIR/BUILD_${1}_${2}.sh" "./zzz_Vulkan-Builder.sh"
+    cp "$START_DIR/repo_tools/${1}/${2}/000_BUILD.sh" "."
     describe_repo >> "$DESC_FILE"
     echo -e "\n\n\nBUILD $(pwd -P) ========================================================\n"
     rm -rf BUILD/
-    time "./zzz_Vulkan-Builder.sh" "$INSTALL_DIR"
+    time "./000_BUILD.sh" "$INSTALL_DIR"
 }
 
 # Make it so ################################################################
