@@ -22,12 +22,11 @@ describe_repo() {
 
 build_repo() {
     cd "/home/mikew/gits/github.com/${1}/${2}"
-    build_script="BUILD_${1}_${2}.sh"
-    cp "$START_DIR/$build_script" "."
+    cp "$START_DIR/BUILD_${1}_${2}.sh" "./zzz_Vulkan-Builder.sh"
     describe_repo >> "$DESC_FILE"
     echo -e "\n\n\nBUILD $(pwd -P) ========================================================\n"
     rm -rf BUILD/
-    time "./$build_script" "$INSTALL_DIR"
+    time "./zzz_Vulkan-Builder.sh" "$INSTALL_DIR"
 }
 
 # Make it so ################################################################
