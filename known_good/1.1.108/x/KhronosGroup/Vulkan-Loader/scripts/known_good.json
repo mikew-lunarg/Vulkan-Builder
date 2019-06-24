@@ -1,8 +1,0 @@
-{
-  "repos" : [
-    {
-      "url" : "https://github.com/KhronosGroup/Vulkan-Headers.git",
-      "commit" : "v1.1.108"
-    }
-  ]
-}
