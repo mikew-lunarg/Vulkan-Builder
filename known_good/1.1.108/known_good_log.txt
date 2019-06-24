@@ -1,0 +1,58 @@
+
+{ "KhronosGroup/glslang"
+} $?=0
+
+
+{ "KhronosGroup/Vulkan-Headers"
+} $?=0
+
+
+{ "KhronosGroup/Vulkan-Loader"
+* 392a7eb3d (tag: v1.1.108) build: Update known-good for 1.1.108 header
+* 8df99b31f repo: Bump known good to 1.1.107 header
+* 1df2ebd32 (tag: v1.1.106) scripts: Update known-good for 1.1.106 header
+* 210ca44cd (tag: v1.1.102) build: Update known-good for 1.1.102 header
+* 15fa85d92 (tag: v1.1.101) build: Update known-good for 1.1.101 header
+} $?=0
+
+
+{ "KhronosGroup/Vulkan-Tools"
+* 35a7de83 build: Update MoltenVK in known_good.json
+* 3ccd7f6e (tag: sdk-1.1.108.0, origin/sdk-1.1.108) build: Update known-good files glslang commit ID
+* d2de4ac0 (tag: v1.1.108) build: Update known-good files for 1.1.108 header
+* 6f9546e7 (tag: v1.1.107, mikew/_known-good, _known-good) scripts: Update known good for 107 header update
+* a50b72c0 known_good: Update MoltenVK known_good version ID
+* 2abb6990 (tag: v1.1.106, tag: sdk-1.1.106.0, origin/sdk-1.1.106) scripts: Update known good for 106 header update
+* 0b44e581 build: Update known-good for 1.1.102 header
+* 282c391f build: Update glslang known-good for 101 SDK
+* 35464647 (tag: v1.1.101) build: Update known-good to 1.1.101 header
+} $?=0
+
+
+{ "KhronosGroup/Vulkan-ValidationLayers"
+* 619c4e58 build: Update glslang known good for SDK 108
+* 5a0de260 (tag: v1.1.108) build: Update known good for 1.1.108 vulkan header
+* de3eeba9 (tag: v1.1.107) build: Update known good for 1.1.107 vulkan header
+* 21638dfb (tag: v1.1.106, mikew/_known-good, _known-good) build: Update known good for 1.1.106 header
+* e4356754 layers: Validate VK_NV_cooperative_matrix
+* ff80a937 (tag: v1.1.102) build: Update known-good for 1.1.102 header
+* f06d731b (tag: v1.1.101) build: Update known-good for 1.1.101 header
+} $?=0
+
+
+{ "LunarG/VulkanTools"
+* 733072439 repo: Bump know_good.json to v1.1.108
+* 6bb29f1f9 repo: Bump known_good.json to v1.1.106
+* 35dbb83cc api_dump: Add CMake code for api_dump on MacOS
+* 8988211b5 (tag: v1.1.102) repo: bump known_good to 1.1.102
+* af9e62715 repo: changes for 1.1.101 header
+} $?=0
+
+
+{ "LunarG/VulkanSamples"
+* 8aabe6b63 (tag: sdk-1.1.108.0, origin/sdk-1.1.108) build: Update glslang version
+* c6df494e2 (tag: v1.1.108) build: Update known good for 1.1.108 header
+* 07b1ccd82 (tag: v1.1.106, tag: sdk-1.1.106.0, origin/sdk-1.1.106, mikew/_known-good, _known-good) build: Update known good for 1.1.106 header
+* 07bb1af3b repo: Update known good to 1.1.101 headers
+} $?=0
+
