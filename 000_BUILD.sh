@@ -10,6 +10,7 @@ START_DIR="$(pwd -P)"
 INSTALL_DIR="${HOME}/VK_INSTALL"
 [ ! -e "$INSTALL_DIR" ] || { echo "you must delete $INSTALL_DIR first"; exit 1; }
 mkdir -p "$INSTALL_DIR"
+cp "setup-env.sh" "$INSTALL_DIR"
 
 DESC_FILE="$INSTALL_DIR/repo_descriptions.txt"
 
