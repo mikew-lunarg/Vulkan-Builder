@@ -35,32 +35,34 @@ $CMAKE \
 
 # ( cd ../..; tar zcvf BUILD-vvl.tgz Vulkan-ValidationLayers/BUILD )
 
+# 'make install' copies artifacts to CMAKE_INSTALL_PREFIX
 make VERBOSE=1 -j4 install |& tee 111_BUILD_LOG.txt
 
 
 # portability setup =========================================================
 
-# portability build products:
-#    BUILD/layers/VkLayer_portability_validation.json
-#    BUILD/layers/libVkLayer_portability_validation.so
+# portability artifacts:
+#    $INSTALL_DIR/lib/libVkLayer_portability_validation.so
+#    $INSTALL_DIR/share/vulkan/explicit_layer.d/VkLayer_portability_validation.json
 
-# Prepend named layers to vkCreateInstance's ppEnabledLayerNames list.
-# Delimited list: Linux colon-delimited; Windows semicolon-delimited
-#export VK_INSTANCE_LAYERS="VK_LAYER_LUNARG_portability_validation"
+# The Loader prepends the contents of VK_INSTANCE_LAYERS to
+# vkCreateInstance's ppEnabledLayerNames list.
+# VK_INSTANCE_LAYERS contains a delimited list (Linux=':', Windows=';')
+export VK_INSTANCE_LAYERS="VK_LAYER_LUNARG_portability_validation"
+
 
 # validation layer tests ====================================================
 
-# error, warn, info, debug, all
-#export VK_LOADER_DEBUG="debug"
-#export VK_LOADER_DEBUG="all"
-
-cd tests
 echo "DISPLAY = ${DISPLAY:=:0}"
 export DISPLAY
 
-VK_LAYER_PATH="../layers" \
-    ./vk_layer_validation_tests \
-    |& tee ../222_TEST_LOG.txt
+# Loader debugging message level: error, warn, info, debug, all
+export VK_LOADER_DEBUG="debug"
+#export VK_LOADER_DEBUG="all"
+
+export VK_LAYER_PATH="${PWD}/layers"
+cd tests
+./vk_layer_validation_tests |& tee ../222_TEST_LOG.txt
 
 #    --gtest_filter=VkLayerTest.ResolveImageTypeMismatch \
 
