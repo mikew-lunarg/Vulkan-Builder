@@ -8,11 +8,15 @@ cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 INSTALL_DIR="${HOME}/VK_INSTALL"
 
+# for jsoncpp
 ./update_external_sources.sh
 
 #rm -rf BUILD
 mkdir -p BUILD
 cd BUILD
+
+cp ../scripts/known_good.json .
+git describe --long --tags --dirty > git_describe.txt
 
 CMAKE="cmake --debug-output --trace-expand"
 CMAKE="cmake"

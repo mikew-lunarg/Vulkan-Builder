@@ -15,6 +15,9 @@ INSTALL_DIR="${HOME}/VK_INSTALL"
 mkdir -p BUILD
 cd BUILD
 
+cp ../scripts/known_good.json .
+git describe --long --tags --dirty > git_describe.txt
+
 CMAKE="cmake --debug-output --trace-expand"
 CMAKE="cmake"
 
