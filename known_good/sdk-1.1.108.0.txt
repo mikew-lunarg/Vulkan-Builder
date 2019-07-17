@@ -1,0 +1,31 @@
+# Extracted from known_good.json files at tag "sdk-1.1.108.0"
+# Something like: gav g co "sdk-1.1.108.0" ; more *.json > out.txt
+
+
+kvl_known_good.json
+    Vulkan-Headers	v1.1.108
+
+kvt_known_good.json
+    glslang     	21eebe74214488264bbf0d19323a03c13a9e53a7
+    MoltenVK    	v1.0.34
+    Vulkan-Headers	v1.1.108
+    Vulkan-Loader	v1.1.108
+
+kvv_known_good.json
+    glslang     	21eebe74214488264bbf0d19323a03c13a9e53a7
+    Vulkan-Headers	v1.1.108
+    Vulkan-Loader	v1.1.108
+    Vulkan-Tools	v1.1.108
+    VulkanTools 	fbd9de31662563f29a3faf42492e52ff5fdea949
+
+lvs_known_good.json
+    glslang     	21eebe74214488264bbf0d19323a03c13a9e53a7
+    Vulkan-Headers	v1.1.108
+    Vulkan-Loader	v1.1.108
+
+lvt_known_good.json
+    Vulkan-Headers	v1.1.108
+    Vulkan-Loader	v1.1.108
+    Vulkan-Tools	v1.1.108
+    Vulkan-ValidationLayers	v1.1.108
+
