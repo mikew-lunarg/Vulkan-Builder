@@ -1,6 +1,6 @@
 #! /bin/bash
 # http://mew.cx/ 2019-03-20
-# Main script for full build of all Vulkan repos
+# Main script for totally-clean build of all Vulkan repos
 
 set -o nounset
 
@@ -27,6 +27,7 @@ build_repo() {
     describe_repo >> "$DESC_FILE"
     echo -e "\n\n\nBUILD $(pwd -P) ========================================================\n"
     rm -rf BUILD/
+
     time "./000_BUILD.sh" "$INSTALL_DIR"
 }
 
@@ -43,5 +44,8 @@ build_repo LunarG VulkanTools
 build_repo LunarG VulkanSamples
 
 (echo "FINISH ${BASH_SOURCE[0]}"; date) >> "$DESC_FILE"
+
+echo -e "\n${BASH_SOURCE[0]} completed successfully"
+date
 
 # vim: set et sw=4 ts=8 ic ai:
