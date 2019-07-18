@@ -9,8 +9,7 @@ for i in \
     KhronosGroup/Vulkan-Loader \
     KhronosGroup/Vulkan-Tools \
     KhronosGroup/Vulkan-ValidationLayers \
-    LunarG/VulkanTools \
-    LunarG/VulkanSamples
+    LunarG/VulkanTools
 do
     cd "/home/mikew/gits/github.com/$i"
     echo -e "\n{ \"$i\""
