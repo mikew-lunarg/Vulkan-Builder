@@ -1,0 +1,13 @@
+# MOVE_BUILD : move build directories to your cwd
+
+gav g bb > g_bb.txt
+
+mv ~/VK_INSTALL/ .
+
+mv ~/kvh/BUILD/ kvh
+mv ~/kvl/BUILD/ kvl
+mv ~/kvt/BUILD/ kvt 
+mv ~/kvv/BUILD/ kvv
+mv ~/lvt/BUILD/ lvt
+mv ~/lvs/BUILD/ lvs
+
