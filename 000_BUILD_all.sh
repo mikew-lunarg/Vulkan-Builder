@@ -11,7 +11,8 @@ cd "$SCRIPT_DIR"
 INSTALL_DIR="${HOME}/VK_INSTALL"
 [ ! -e "$INSTALL_DIR" ] || { echo "Installation directory \"$INSTALL_DIR\" already exists.  exiting."; exit 1; }
 
-DESC_FILE="$INSTALL_DIR/repo_descriptions.txt"
+INFO_DIR="$INSTALL_DIR/info"
+DESC_FILE="$INFO_DIR/repo_descriptions.txt"
 
 describe_repo() {
     pwd -P
@@ -27,7 +28,7 @@ build_repo() {
 
     BUILD_SCRIPT="000_BUILD_${OWNER}_${REPO}.sh"
     cp "$SCRIPT_DIR/repo_tools/$BUILD_SCRIPT" "."
-    cp "$SCRIPT_DIR/repo_tools/$BUILD_SCRIPT" "$INSTALL_DIR"
+    cp "$SCRIPT_DIR/repo_tools/$BUILD_SCRIPT" "$INFO_DIR"
 
     describe_repo >> "$DESC_FILE"
     echo -e "\n\n\nBUILD $(pwd -P) ========================================================\n"
@@ -35,13 +36,14 @@ build_repo() {
 
     time "./$BUILD_SCRIPT" "$INSTALL_DIR"
 
-    find "$INSTALL_DIR" -type f | sort > "$INSTALL_DIR/999_manifest_${OWNER}_${REPO}.txt"
+    find "$INSTALL_DIR" -type f | sort > "$INFO_DIR/999_manifest_${OWNER}_${REPO}.txt"
 }
 
 # Make it so ################################################################
 
 mkdir -p "$INSTALL_DIR"
-cp "setup-env.sh" "$INSTALL_DIR"
+mkdir -p "$INFO_DIR"
+cp "setup-env.sh" "$INFO_DIR"
 (pwd; echo -e "\nSTART ${SCRIPT_NAME}"; date; echo; describe_repo) >> "$DESC_FILE"
 
 build_repo KhronosGroup glslang
