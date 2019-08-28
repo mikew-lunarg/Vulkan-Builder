@@ -4,8 +4,8 @@
 
 set -o nounset
 
-START_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd -P )"
-cd "$START_DIR"
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd -P )"
+cd "$SCRIPT_DIR"
 
 INSTALL_DIR="${HOME}/VK_INSTALL"
 [ ! -e "$INSTALL_DIR" ] || { echo "you must delete $INSTALL_DIR first"; exit 1; }
@@ -24,7 +24,7 @@ build_repo() {
     OWNER="${1}"
     REPO="${2}"
     cd "/home/mikew/gits/github.com/${OWNER}/${REPO}"
-    cp "$START_DIR/repo_tools/${OWNER}/${REPO}/000_BUILD.sh" "."
+    cp "$SCRIPT_DIR/repo_tools/${OWNER}/${REPO}/000_BUILD.sh" "."
     describe_repo >> "$DESC_FILE"
     echo -e "\n\n\nBUILD $(pwd -P) ========================================================\n"
     rm -rf BUILD/
