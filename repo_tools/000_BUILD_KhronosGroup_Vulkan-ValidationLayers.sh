@@ -60,7 +60,7 @@ echo "DISPLAY = ${DISPLAY:=:0}"
 export DISPLAY
 
 # Loader debugging message level: error, warn, info, debug, all
-export VK_LOADER_DEBUG="debug"
+#export VK_LOADER_DEBUG="debug"
 #export VK_LOADER_DEBUG="all"
 
 export VK_LAYER_PATH="${PWD}/layers"
