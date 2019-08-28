@@ -1,3 +1,3 @@
-#! /bin/bash -x
+#! /bin/bash
 
-gav git l -- scripts/known_good.json
+gav git log --graph --decorate --oneline -5 -- scripts/known_good.json
