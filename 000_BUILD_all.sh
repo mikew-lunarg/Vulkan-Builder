@@ -9,7 +9,6 @@ cd "$SCRIPT_DIR"
 
 INSTALL_DIR="${HOME}/VK_INSTALL"
 [ ! -e "$INSTALL_DIR" ] || { echo "Installation directory \"$INSTALL_DIR\" already exists.  exiting."; exit 1; }
-mkdir -p "$INSTALL_DIR"
 
 DESC_FILE="$INSTALL_DIR/repo_descriptions.txt"
 
@@ -26,28 +25,30 @@ build_repo() {
     cd "/home/mikew/gits/github.com/${OWNER}/${REPO}"
 
     BUILD_SCRIPT="000_BUILD_${OWNER}_${REPO}.sh"
-
     cp "$SCRIPT_DIR/repo_tools/$BUILD_SCRIPT" "."
+    cp "$SCRIPT_DIR/repo_tools/$BUILD_SCRIPT" "$INSTALL_DIR"
+
     describe_repo >> "$DESC_FILE"
     echo -e "\n\n\nBUILD $(pwd -P) ========================================================\n"
     rm -rf BUILD/
 
     time "./$BUILD_SCRIPT" "$INSTALL_DIR"
 
-    find "$INSTALL_DIR" -type f > "$INSTALL_DIR/manifest_${REPO}"
+    find "$INSTALL_DIR" -type f | sort > "$INSTALL_DIR/999_manifest_${OWNER}_${REPO}.txt"
 }
 
 # Make it so ################################################################
 
-(echo "START ${BASH_SOURCE[0]}"; date; echo; describe_repo) >> "$DESC_FILE"
-
+mkdir -p "$INSTALL_DIR"
 cp "setup-env.sh" "$INSTALL_DIR"
+(pwd; echo -e "\nSTART ${SCRIPT_NAME}"; date; echo; describe_repo) >> "$DESC_FILE"
 
 build_repo KhronosGroup glslang
 build_repo KhronosGroup Vulkan-Headers
 build_repo KhronosGroup Vulkan-Loader
 build_repo KhronosGroup Vulkan-Tools
 build_repo KhronosGroup Vulkan-ValidationLayers
+build_repo LunarG VulkanSamples
 build_repo LunarG VulkanTools
 
 (echo "FINISH ${BASH_SOURCE[0]}"; date) >> "$DESC_FILE"

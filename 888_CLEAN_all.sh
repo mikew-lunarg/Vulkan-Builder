@@ -23,8 +23,9 @@ clean_repo KhronosGroup Vulkan-Headers
 clean_repo KhronosGroup Vulkan-Loader
 clean_repo KhronosGroup Vulkan-Tools
 clean_repo KhronosGroup Vulkan-ValidationLayers
-clean_repo LunarG VulkanTools
 clean_repo LunarG VulkanSamples
+clean_repo LunarG VulkanTools
+
 rm -rf "$INSTALL_DIR"
 
 # vim: set et sw=4 ts=8 ic ai:
