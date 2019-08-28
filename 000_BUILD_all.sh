@@ -24,12 +24,15 @@ build_repo() {
     OWNER="${1}"
     REPO="${2}"
     cd "/home/mikew/gits/github.com/${OWNER}/${REPO}"
-    cp "$SCRIPT_DIR/repo_tools/${OWNER}/${REPO}/000_BUILD.sh" "."
+
+    BUILD_SCRIPT="000_BUILD_${OWNER}_${REPO}.sh"
+
+    cp "$SCRIPT_DIR/repo_tools/$BUILD_SCRIPT" "."
     describe_repo >> "$DESC_FILE"
     echo -e "\n\n\nBUILD $(pwd -P) ========================================================\n"
     rm -rf BUILD/
 
-    time "./000_BUILD.sh" "$INSTALL_DIR"
+    time "./$BUILD_SCRIPT" "$INSTALL_DIR"
 
     find "$INSTALL_DIR" -type f > "$INSTALL_DIR/manifest_${REPO}"
 }

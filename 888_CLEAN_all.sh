@@ -10,8 +10,10 @@ clean_repo() {
     OWNER="${1}"
     REPO="${2}"
     cd "/home/mikew/gits/github.com/${OWNER}/${REPO}"
-    rm -f "000_BUILD.sh"
-    rm -rf BUILD/
+
+    BUILD_SCRIPT="000_BUILD_${OWNER}_${REPO}.sh"
+    rm -f "./$BUILD_SCRIPT"
+    rm -rf "BUILD/"
 }
 
 # Make it so ################################################################
