@@ -30,6 +30,8 @@ build_repo() {
     rm -rf BUILD/
 
     time "./000_BUILD.sh" "$INSTALL_DIR"
+
+    find "$INSTALL_DIR" -type f > "$INSTALL_DIR/manifest_${REPO}"
 }
 
 # Make it so ################################################################
