@@ -4,7 +4,8 @@
 
 set -o nounset
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd -P )"
+SCRIPT_NAME="${BASH_SOURCE[0]}"
+SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_NAME}")" >/dev/null 2>&1 && pwd -P)"
 cd "$SCRIPT_DIR"
 
 INSTALL_DIR="${HOME}/VK_INSTALL"
@@ -51,9 +52,9 @@ build_repo KhronosGroup Vulkan-ValidationLayers
 build_repo LunarG VulkanSamples
 build_repo LunarG VulkanTools
 
-(echo "FINISH ${BASH_SOURCE[0]}"; date) >> "$DESC_FILE"
+(echo "FINISH ${SCRIPT_NAME}"; date) >> "$DESC_FILE"
 
-echo -e "\n${BASH_SOURCE[0]} completed successfully"
+echo -e "\n${SCRIPT_NAME} completed successfully"
 date
 
 # vim: set et sw=4 ts=8 ic ai:
