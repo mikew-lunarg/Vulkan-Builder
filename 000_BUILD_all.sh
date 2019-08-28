@@ -35,6 +35,7 @@ build_repo() {
     rm -rf BUILD/
 
     time "./$BUILD_SCRIPT" "$INSTALL_DIR"
+    [ $? ] || { echo "Build failed in $(pwd)"; exit 1; }
 
     find "$INSTALL_DIR" -type f | sort > "$INFO_DIR/999_manifest_${OWNER}_${REPO}.txt"
 }
