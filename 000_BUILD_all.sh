@@ -10,7 +10,6 @@ cd "$START_DIR"
 INSTALL_DIR="${HOME}/VK_INSTALL"
 [ ! -e "$INSTALL_DIR" ] || { echo "you must delete $INSTALL_DIR first"; exit 1; }
 mkdir -p "$INSTALL_DIR"
-cp "setup-env.sh" "$INSTALL_DIR"
 
 DESC_FILE="$INSTALL_DIR/repo_descriptions.txt"
 
@@ -34,6 +33,8 @@ build_repo() {
 # Make it so ################################################################
 
 (echo "START ${BASH_SOURCE[0]}"; date; echo; describe_repo) >> "$DESC_FILE"
+
+cp "setup-env.sh" "$INSTALL_DIR"
 
 build_repo KhronosGroup glslang
 build_repo KhronosGroup Vulkan-Headers
