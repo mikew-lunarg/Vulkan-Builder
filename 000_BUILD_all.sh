@@ -21,8 +21,10 @@ describe_repo() {
 }
 
 build_repo() {
-    cd "/home/mikew/gits/github.com/${1}/${2}"
-    cp "$START_DIR/repo_tools/${1}/${2}/000_BUILD.sh" "."
+    OWNER="${1}"
+    REPO="${2}"
+    cd "/home/mikew/gits/github.com/${OWNER}/${REPO}"
+    cp "$START_DIR/repo_tools/${OWNER}/${REPO}/000_BUILD.sh" "."
     describe_repo >> "$DESC_FILE"
     echo -e "\n\n\nBUILD $(pwd -P) ========================================================\n"
     rm -rf BUILD/

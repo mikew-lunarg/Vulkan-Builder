@@ -7,7 +7,9 @@ set -o nounset
 INSTALL_DIR="${HOME}/VK_INSTALL"
 
 clean_repo() {
-    cd "/home/mikew/gits/github.com/${1}/${2}"
+    OWNER="${1}"
+    REPO="${2}"
+    cd "/home/mikew/gits/github.com/${OWNER}/${REPO}"
     rm -f "000_BUILD.sh"
     rm -rf BUILD/
 }
