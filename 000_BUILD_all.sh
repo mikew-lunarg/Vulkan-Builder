@@ -8,7 +8,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd -P )
 cd "$SCRIPT_DIR"
 
 INSTALL_DIR="${HOME}/VK_INSTALL"
-[ ! -e "$INSTALL_DIR" ] || { echo "you must delete $INSTALL_DIR first"; exit 1; }
+[ ! -e "$INSTALL_DIR" ] || { echo "Installation directory \"$INSTALL_DIR\" already exists.  exiting."; exit 1; }
 mkdir -p "$INSTALL_DIR"
 
 DESC_FILE="$INSTALL_DIR/repo_descriptions.txt"
