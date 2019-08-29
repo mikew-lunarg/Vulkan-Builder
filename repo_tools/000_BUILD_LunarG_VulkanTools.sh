@@ -34,8 +34,7 @@ $CMAKE \
     -DBUILD_VKTRACE="ON" \
     -DBUILD_VLF="ON" \
     -DBUILD_VIA="ON" \
-    .. \
-    |& tee 000_CMAKE_LOG.txt
+    ..
 
 # ( cd ../..; tar zcvf BUILD-vtl.tgz VulkanTools/BUILD )
 

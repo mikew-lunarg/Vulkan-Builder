@@ -25,8 +25,7 @@ $CMAKE \
     -DUSE_CCACHE="ON" \
     -DCMAKE_INSTALL_PREFIX="$INSTALL_DIR" \
     -DVULKAN_HEADERS_INSTALL_DIR="$INSTALL_DIR" \
-    .. \
-    |& tee 000_CMAKE_LOG.txt
+    ..
 
 # ( cd ../..; tar zcvf BUILD-vl.tgz Vulkan-Loader/BUILD )
 

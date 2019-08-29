@@ -39,8 +39,7 @@ $CMAKE \
     -DBUILD_LAYER_SUPPORT_FILES="ON" \
     -DBUILD_TESTS="ON" \
     -DINSTALL_TESTS="ON" \
-    .. \
-    |& tee 000_CMAKE_LOG.txt
+    ..
 
 # ( cd ../..; tar zcvf BUILD-vvl.tgz Vulkan-ValidationLayers/BUILD )
 

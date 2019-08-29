@@ -27,8 +27,7 @@ $CMAKE \
     -DVULKAN_HEADERS_INSTALL_DIR="$INSTALL_DIR" \
     -DVULKAN_LOADER_INSTALL_DIR="$INSTALL_DIR" \
     -DGLSLANG_INSTALL_DIR="$INSTALL_DIR" \
-    .. \
-    |& tee 000_CMAKE_LOG.txt
+    ..
 
 # ( cd ../..; tar zcvf BUILD-vt.tgz Vulkan-Tools/BUILD )
 

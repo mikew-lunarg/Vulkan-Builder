@@ -36,8 +36,7 @@ $CMAKE \
     -DCMAKE_BUILD_TYPE="Debug" \
     -DUSE_CCACHE="ON" \
     -DCMAKE_INSTALL_PREFIX="$INSTALL_DIR" \
-    .. \
-    |& tee 000_CMAKE_LOG.txt
+    ..
 
 # (cd ../..; tar zcvf BUILD-glslang.tgz glslang/BUILD)
 
