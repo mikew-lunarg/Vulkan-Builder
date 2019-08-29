@@ -47,18 +47,6 @@ $CMAKE \
 make VERBOSE=1 -j4 install
 
 
-# portability setup =========================================================
-
-# portability artifacts:
-#    $INSTALL_DIR/lib/libVkLayer_portability_validation.so
-#    $INSTALL_DIR/share/vulkan/explicit_layer.d/VkLayer_portability_validation.json
-
-# The Loader prepends the contents of VK_INSTANCE_LAYERS to
-# vkCreateInstance's ppEnabledLayerNames list.
-# VK_INSTANCE_LAYERS contains a delimited list (Linux=':', Windows=';')
-export VK_INSTANCE_LAYERS="VK_LAYER_LUNARG_portability_validation"
-
-
 # validation layer tests ====================================================
 
 echo "DISPLAY = ${DISPLAY:=:0}"
