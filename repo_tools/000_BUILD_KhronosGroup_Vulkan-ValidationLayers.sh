@@ -9,6 +9,12 @@ set -o nounset
 
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
+if [ ! -d "external/googletest" ]
+then
+    git clone https://github.com/google/googletest.git external/googletest
+    ( cd external/googletest; git checkout tags/release-1.8.1 )
+fi
+
 INSTALL_DIR="${HOME}/VK_INSTALL"
 
 #rm -rf BUILD
