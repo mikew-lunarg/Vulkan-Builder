@@ -70,7 +70,7 @@ export DISPLAY
 
 export VK_LAYER_PATH="${PWD}/layers"
 cd tests
-./vk_layer_validation_tests |& tee ../222_TEST_LOG.txt
+./vk_layer_validation_tests
 
 #    --gtest_filter=VkLayerTest.ResolveImageTypeMismatch \
 
