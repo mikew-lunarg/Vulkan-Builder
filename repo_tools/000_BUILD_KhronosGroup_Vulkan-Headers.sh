@@ -29,6 +29,6 @@ $CMAKE \
 
 # ( cd ../..; tar zcvf BUILD-vh.tgz Vulkan-Headers/BUILD )
 
-make VERBOSE=1 install |& tee 111_BUILD_LOG.txt
+make VERBOSE=1 install
 
 # vim: set sw=4 ts=8 et ic ai:
