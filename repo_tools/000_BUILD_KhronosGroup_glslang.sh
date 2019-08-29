@@ -11,6 +11,11 @@ set -o nounset
 
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
+if [ ! -d "External/googletest" ]
+then
+    git clone https://github.com/google/googletest.git External/googletest
+fi
+
 ./update_glslang_sources.py
 
 INSTALL_DIR="${HOME}/VK_INSTALL"
