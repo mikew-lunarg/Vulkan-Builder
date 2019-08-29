@@ -1,17 +1,15 @@
 #! /bin/bash
 
-cd ~/gh
 for i in \
-    KhronosGroup/Vulkan-Headers/scripts/known_good.json \
-    KhronosGroup/Vulkan-Loader/scripts/known_good.json \
-    KhronosGroup/Vulkan-Tools/scripts/known_good.json \
-    KhronosGroup/Vulkan-ValidationLayers/scripts/known_good.json \
-    LunarG/VulkanSamples/scripts/known_good.json \
-    LunarG/VulkanTools/scripts/known_good.json
+    KhronosGroup/Vulkan-Loader \
+    KhronosGroup/Vulkan-Tools \
+    KhronosGroup/Vulkan-ValidationLayers \
+    LunarG/VulkanSamples \
+    LunarG/VulkanTools
 do
-    echo -e "\t$i"
-    jq -M '.repos[] | "\(.name) \(.commit)"' < "$i"
-    echo
+    echo -e "\n# $i"
+    KNOWN_GOOD_FILE="/home/mikew/gits/github.com/$i/scripts/known_good.json"
+    jq -M '.repos[] | "\(.name) \(.commit)"' < "$KNOWN_GOOD_FILE" | sort
 done
 
 # vim: set sw=4 ts=8 et ic ai:
