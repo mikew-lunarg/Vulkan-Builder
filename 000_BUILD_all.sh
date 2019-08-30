@@ -27,8 +27,8 @@ build_repo() {
     cd "/home/mikew/gits/github.com/${OWNER}/${REPO}"
 
     BUILD_SCRIPT="000_BUILD_${OWNER}_${REPO}.sh"
-    cp "$SCRIPT_DIR/repo_tools/$BUILD_SCRIPT" "."
-    cp "$SCRIPT_DIR/repo_tools/$BUILD_SCRIPT" "$INFO_DIR"
+    cp -- "$SCRIPT_DIR/repo_tools/$BUILD_SCRIPT" "."
+    cp -- "$SCRIPT_DIR/repo_tools/$BUILD_SCRIPT" "$INFO_DIR"
 
     describe_repo >> "$DESC_FILE"
     echo -e "\n\n\nBUILD $(pwd -P) ========================================================\n"
@@ -36,16 +36,18 @@ build_repo() {
 
     time "./$BUILD_SCRIPT" "$INSTALL_DIR"
     BUILD_RC="$?"
-    [ $BUILD_RC -eq 0 ] || { echo "Build failed in $(pwd)"; exit "$BUILD_RC"; }
+    [ $BUILD_RC -eq 0 ] || { echo "Build failed RC=${BUILD_RC} in $(pwd)"; exit "$BUILD_RC"; }
 
-    find "$INSTALL_DIR" -type f | sort > "$INFO_DIR/999_manifest_${OWNER}_${REPO}.txt"
+    cd "$INSTALL_DIR"
+    hashdeep -r -l -of . > "$INFO_DIR/888_hashdeep_${OWNER}_${REPO}.txt"
+    find . -type f | sort > "$INFO_DIR/999_manifest_${OWNER}_${REPO}.txt"
 }
 
 # Make it so ################################################################
 
 mkdir -p "$INSTALL_DIR"
 mkdir -p "$INFO_DIR"
-cp "setup-env.sh" "$INFO_DIR"
+cp -- "setup-env.sh" "$INFO_DIR"
 (pwd; echo -e "\nSTART ${SCRIPT_NAME}"; date; echo; describe_repo) >> "$DESC_FILE"
 
 build_repo KhronosGroup glslang
