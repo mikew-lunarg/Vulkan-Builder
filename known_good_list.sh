@@ -9,9 +9,10 @@ for i in \
     LunarG/VulkanSamples \
     LunarG/VulkanTools
 do
-    echo -e "\n# $i"
-    KNOWN_GOOD_FILE="${GH}/$i/scripts/known_good.json"
-    jq -M '.repos[] | "\(.name) \(.commit)"' < "$KNOWN_GOOD_FILE" | sort
+    cd "${GH}/$i"
+    echo -n -e "\n### $i "
+    git describe --long --tags --dirty
+    jq -M '.repos[] | "\(.name) \(.commit)"' < "scripts/known_good.json"
 done
 
 # vim: set sw=4 ts=8 et ic ai:
