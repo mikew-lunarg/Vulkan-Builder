@@ -1,0 +1,26 @@
+### KhronosGroup/Vulkan-Loader v1.1.121-0-g23c3bca20
+"Vulkan-Headers v1.1.121"
+
+### KhronosGroup/Vulkan-Tools v1.1.121-0-gbcabc204
+"glslang 333d1c95792692205472c457d7bec915a94c8000"
+"Vulkan-Headers v1.1.121"
+"MoltenVK v1.0.36"
+"Vulkan-Loader v1.1.121"
+
+### KhronosGroup/Vulkan-ValidationLayers v1.1.121-0-g389f0cff
+"glslang 333d1c95792692205472c457d7bec915a94c8000"
+"Vulkan-Headers v1.1.121"
+"Vulkan-Loader v1.1.121"
+"VulkanTools 206108f07f531cab5523ff36d7947f39cdd7ad6b"
+"Vulkan-Tools e36c760bbde1c56b5b2a934347ff0fb9dce4d793"   (= "v1.1.120")
+
+### LunarG/VulkanSamples v1.1.114-2-g461847dae
+"glslang 333d1c95792692205472c457d7bec915a94c8000"
+"Vulkan-Headers v1.1.114"
+"Vulkan-Loader v1.1.114"
+
+### LunarG/VulkanTools v1.1.114-32-g206108f07
+"Vulkan-Headers v1.1.114"
+"Vulkan-Loader v1.1.114"
+"Vulkan-Tools v1.1.114"
+"Vulkan-ValidationLayers ddbb7fb615b07fabf4a28f2374ebbb9297075579"
