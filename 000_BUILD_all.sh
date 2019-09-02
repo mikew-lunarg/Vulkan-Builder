@@ -14,6 +14,8 @@ INSTALL_DIR="${HOME}/VK_INSTALL"
 INFO_DIR="$INSTALL_DIR/info"
 DESC_FILE="$INFO_DIR/repo_descriptions.txt"
 
+GH="/home/mikew/gits/github.com"
+
 describe_repo() {
     pwd -P
     git describe --long --tags --dirty
@@ -24,7 +26,7 @@ describe_repo() {
 build_repo() {
     OWNER="${1}"
     REPO="${2}"
-    cd "/home/mikew/gits/github.com/${OWNER}/${REPO}"
+    cd "${GH}/${OWNER}/${REPO}"
 
     BUILD_SCRIPT="000_BUILD_${OWNER}_${REPO}.sh"
     cp -- "$SCRIPT_DIR/repo_tools/$BUILD_SCRIPT" "."

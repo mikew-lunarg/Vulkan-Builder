@@ -4,12 +4,14 @@
 
 set -o nounset
 
+GH="/home/mikew/gits/github.com"
+
 INSTALL_DIR="${HOME}/VK_INSTALL"
 
 clean_repo() {
     OWNER="${1}"
     REPO="${2}"
-    cd "/home/mikew/gits/github.com/${OWNER}/${REPO}"
+    cd "${GH}/${OWNER}/${REPO}"
 
     BUILD_SCRIPT="000_BUILD_${OWNER}_${REPO}.sh"
     rm -f "./$BUILD_SCRIPT"

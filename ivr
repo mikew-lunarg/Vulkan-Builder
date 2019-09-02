@@ -1,7 +1,9 @@
 #! /bin/bash
+# ivr : iterate vulkan repos
 # Execute a command in each of the listed Vulkan GitHub repos.
 # http://mew.cx/
 
+GH="/home/mikew/gits/github.com"
 
 for i in \
     KhronosGroup/glslang \
@@ -12,7 +14,7 @@ for i in \
     LunarG/VulkanSamples \
     LunarG/VulkanTools
 do
-    cd "/home/mikew/gits/github.com/$i"
+    cd "$GH/$i"
     echo -e "\n{ \"$i\""
     eval "$@"
     echo -e "} \$?=$?\n"

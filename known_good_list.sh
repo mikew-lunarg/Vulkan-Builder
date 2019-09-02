@@ -1,5 +1,7 @@
 #! /bin/bash
 
+GH="/home/mikew/gits/github.com"
+
 for i in \
     KhronosGroup/Vulkan-Loader \
     KhronosGroup/Vulkan-Tools \
@@ -8,7 +10,7 @@ for i in \
     LunarG/VulkanTools
 do
     echo -e "\n# $i"
-    KNOWN_GOOD_FILE="/home/mikew/gits/github.com/$i/scripts/known_good.json"
+    KNOWN_GOOD_FILE="${GH}/$i/scripts/known_good.json"
     jq -M '.repos[] | "\(.name) \(.commit)"' < "$KNOWN_GOOD_FILE" | sort
 done
 
