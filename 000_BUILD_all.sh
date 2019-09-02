@@ -41,8 +41,7 @@ build_repo() {
     [ $BUILD_RC -eq 0 ] || { echo "Build failed RC=${BUILD_RC} in $(pwd)"; exit "$BUILD_RC"; }
 
     cd "$INSTALL_DIR"
-    hashdeep -r -l -of . > "$INFO_DIR/888_hashdeep_${OWNER}_${REPO}.txt"
-    find . -type f | sort > "$INFO_DIR/999_manifest_${OWNER}_${REPO}.txt"
+    find . -type f | sort > "$INFO_DIR/manifest_${OWNER}_${REPO}.txt"
 }
 
 # Make it so ################################################################
@@ -60,6 +59,9 @@ build_repo KhronosGroup Vulkan-Tools
 build_repo KhronosGroup Vulkan-ValidationLayers
 build_repo LunarG VulkanSamples
 build_repo LunarG VulkanTools
+
+cd "$INSTALL_DIR"
+hashdeep -r -l -of . > "$INFO_DIR/hashdeep.txt"
 
 (echo "FINISH ${SCRIPT_NAME}"; date) >> "$DESC_FILE"
 
