@@ -49,8 +49,9 @@ build_repo() {
 
 mkdir -p "$INSTALL_DIR"
 mkdir -p "$INFO_DIR"
+./known_good_list.sh > "$INFO_DIR/known_good_list.txt"
 cp -- "setup-env.sh" "$INFO_DIR"
-(pwd; echo -e "\nSTART ${SCRIPT_NAME}"; date; echo; describe_repo) >> "$DESC_FILE"
+(pwd; echo -e "START ${SCRIPT_NAME}"; date; echo; describe_repo) >> "$DESC_FILE"
 
 build_repo KhronosGroup glslang
 build_repo KhronosGroup Vulkan-Headers
