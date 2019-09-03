@@ -37,8 +37,8 @@ $CMAKE \
     -DGLSLANG_INSTALL_DIR="$INSTALL_DIR" \
     -DBUILD_LAYERS="ON" \
     -DBUILD_LAYER_SUPPORT_FILES="ON" \
-    -DBUILD_TESTS="ON" \
-    -DINSTALL_TESTS="ON" \
+    -DBUILD_TESTS="OFF" \
+    -DINSTALL_TESTS="OFF" \
     ..
 
 # ( cd ../..; tar zcvf BUILD-vvl.tgz Vulkan-ValidationLayers/BUILD )
@@ -56,9 +56,9 @@ export DISPLAY
 #export VK_LOADER_DEBUG="debug"
 #export VK_LOADER_DEBUG="all"
 
-export VK_LAYER_PATH="${PWD}/layers"
-cd tests
-./vk_layer_validation_tests
+#export VK_LAYER_PATH="${PWD}/layers"
+#cd tests
+#./vk_layer_validation_tests
 
 #    --gtest_filter=VkLayerTest.ResolveImageTypeMismatch \
 
