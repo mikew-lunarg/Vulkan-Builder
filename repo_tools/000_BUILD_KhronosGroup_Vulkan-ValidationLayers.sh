@@ -47,6 +47,18 @@ $CMAKE \
 make VERBOSE=1 -j4 install
 
 
+# delete unneeded layer_support_files; the remainder are needed.
+cd "$INSTALL_DIR"
+rm -f include/hash_util.h
+rm -f include/hash_vk_types.h
+rm -f include/vk_format_utils.cpp
+rm -f include/vk_layer_config.cpp
+rm -f include/vk_layer_extension_utils.cpp
+rm -f include/vk_layer_utils.cpp
+rm -f include/vk_safe_struct.cpp
+rm -f include/vk_safe_struct.h
+
+
 # validation layer tests ====================================================
 
 echo "DISPLAY = ${DISPLAY:=:0}"
