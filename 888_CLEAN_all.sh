@@ -30,4 +30,7 @@ clean_repo LunarG VulkanTools
 
 rm -rf "$INSTALL_DIR"
 
-# vim: set et sw=4 ts=8 ic ai:
+# KhronosGroup/Vulkan-Loader/external
+# KhronosGroup/Vulkan-Tools/external
+# KhronosGroup/Vulkan-ValidationLayers/external
+# KhronosGroup/glslang/External
