@@ -1,13 +1,19 @@
-# MOVE_BUILD : move build directories to your cwd
+#! /bin/bash -x
+exit 1
+# MOVE_BUILD : move build/install directories to a common dir
 
-gav g bb > g_bb.txt
+# TODO make this a cmdline arg
+DIR="."
 
-mv ~/VK_INSTALL/ .
+# capture the state of local branches per repo
+ivr g bb > "$DIR/g_bb.txt"
 
-mv ~/kvh/BUILD/ kvh
-mv ~/kvl/BUILD/ kvl
-mv ~/kvt/BUILD/ kvt 
-mv ~/kvv/BUILD/ kvv
-mv ~/lvt/BUILD/ lvt
-mv ~/lvs/BUILD/ lvs
+mv ~/VK_INSTALL/ "$DIR"
+
+mv ~/kvh/BUILD/ "$DIR/kvh"
+mv ~/kvl/BUILD/ "$DIR/kvl"
+mv ~/kvt/BUILD/ "$DIR/kvt"
+mv ~/kvv/BUILD/ "$DIR/kvv"
+mv ~/lvt/BUILD/ "$DIR/lvt"
+mv ~/lvs/BUILD/ "$DIR/lvs"
 
