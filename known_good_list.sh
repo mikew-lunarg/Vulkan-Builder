@@ -1,4 +1,5 @@
 #! /bin/bash
+# Print known_good references for each repo
 
 GH="/home/mikew/gits/github.com"
 
