@@ -5,8 +5,8 @@ GH="/home/mikew/gits/github.com"
 
 for i in \
     KhronosGroup/Vulkan-Loader \
-    KhronosGroup/Vulkan-Tools \
     KhronosGroup/Vulkan-ValidationLayers \
+    KhronosGroup/Vulkan-Tools \
     LunarG/VulkanSamples \
     LunarG/VulkanTools
 do
